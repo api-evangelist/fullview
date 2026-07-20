@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+docs: https://support.fullview.io/en/collections/3529098-developer-docs
+summary:
+  types: [openIdConnect, jwt]
+  oauth2_flows: [authorizationCode, clientCredentials, implicit, password, deviceCode]
+  identity_model: >-
+    Platform authentication uses a Keycloak-based OpenID Connect provider
+    (realm fullview-idp-users-eu1). End-user identity for session replay /
+    cobrowse is established client-side via the window.$fvIdentity object and
+    can be cryptographically secured with RS256 JWT "Signed Identities".
+schemes:
+  - name: fullviewOIDC
+    type: openIdConnect
+    openIdConnectUrl: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+    issuer: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1
+    authorization_endpoint: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/auth
+    token_endpoint: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/token
+    jwks_uri: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/certs
+    grant_types: [authorization_code, client_credentials, implicit, password, refresh_token, "urn:ietf:params:oauth:grant-type:device_code", "urn:ietf:params:oauth:grant-type:token-exchange"]
+    provider: Keycloak
+    sources: [openapi/fullview-bug-report-openapi.yml]
+  - name: signedIdentities
+    type: jwt
+    algorithm: RS256
+    key: RSA 2048-bit (or stronger) key pair, PEM format
+    docs: https://support.fullview.io/en/articles/15082329-signed-identities-secure-your-users-with-jwt-signed-identities
+    description: >-
+      Optional end-user identity signing. Your backend signs a JWT (claims:
+      id required, name required, email optional, exp recommended 1 hour, plus
+      optional roles/env/disableReplaysForUser/custom) with a private key; the
+      matching public key is uploaded to Fullview to verify signatures and
+      prevent user impersonation via window.$fvIdentity.
+    claims:
+      required: [id, name]
+      optional: [email, exp, roles, env, disableReplaysForUser, custom]
