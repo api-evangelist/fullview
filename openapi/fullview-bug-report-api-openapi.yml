@@ -1,0 +1,104 @@
+openapi: 3.1.0
+info:
+  title: Fullview Bug Report API
+  version: '1.0'
+  description: Fullview integration API for programmatically starting and stopping a bug recording (session replay capture) for an identified end user. Documented in the Fullview developer knowledge base ("Report a bug - API endpoints"). Used by help-desk / support integrations to attach a Fullview session recording to a support case. Captured verbatim from public Fullview documentation by the API Evangelist enrichment pipeline.
+  contact:
+    name: Fullview Support
+    email: support@fullview.io
+    url: https://support.fullview.io/en/
+  x-source: https://support.fullview.io/en/articles/11552509-report-a-bug-api-endpoints
+servers:
+- url: https://api.eu1.fullview.io
+  description: Fullview EU1 region API host
+security:
+- fullviewOIDC: []
+tags:
+- name: Bug Report
+paths:
+  /access/api/integrations/bug-report/start:
+    post:
+      operationId: startBugReport
+      summary: Start a bug recording
+      description: Starts a Fullview bug recording (session replay) for the identified end user so a support agent can review the reproduction. Optionally carries help-desk integration context (platform, workspace, case).
+      tags:
+      - Bug Report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartBugReportRequest'
+      responses:
+        '200':
+          description: Bug recording started.
+  /access/api/integrations/bug-report/stop:
+    post:
+      operationId: stopBugReport
+      summary: Stop a bug recording
+      description: Stops an in-progress Fullview bug recording for the identified end user.
+      tags:
+      - Bug Report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StopBugReportRequest'
+      responses:
+        '200':
+          description: Bug recording stopped.
+components:
+  schemas:
+    IntegrationData:
+      type: object
+      description: Optional help-desk integration context attached to the recording.
+      properties:
+        platform:
+          type: string
+          description: The help-desk platform (e.g. zendesk, intercom, salesforce, hubspot).
+        workspaceId:
+          type: string
+        caseId:
+          type: string
+    StartBugReportRequest:
+      type: object
+      required:
+      - organisationId
+      - externalId
+      - email
+      properties:
+        organisationId:
+          type: string
+          description: The Fullview organisation identifier.
+        externalId:
+          type: string
+          description: The end user's identifier in your system (the identified user).
+        email:
+          type: string
+          format: email
+          description: The end user's email address.
+        integrationData:
+          $ref: '#/components/schemas/IntegrationData'
+    StopBugReportRequest:
+      type: object
+      required:
+      - organisationId
+      - externalId
+      - email
+      properties:
+        organisationId:
+          type: string
+          description: The Fullview organisation identifier.
+        externalId:
+          type: string
+          description: The end user's identifier in your system.
+        email:
+          type: string
+          format: email
+          description: The end user's email address.
+  securitySchemes:
+    fullviewOIDC:
+      type: openIdConnect
+      openIdConnectUrl: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+      description: Fullview uses a Keycloak-based OpenID Connect provider for platform authentication (realm fullview-idp-users-eu1).
