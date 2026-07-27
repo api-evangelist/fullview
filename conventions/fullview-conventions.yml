@@ -1,0 +1,48 @@
+generated: '2026-07-19'
+method: searched
+source: https://support.fullview.io/en/collections/3529098-developer-docs
+authentication:
+  platform: OpenID Connect (Keycloak, realm fullview-idp-users-eu1)
+  end_user_identity: >-
+    Set client-side via window.$fvIdentity (id + name required, email/env/roles
+    optional). Can be RS256 JWT-signed ("Signed Identities") to prevent
+    impersonation; window.$fvIdentityRefresh supplies a fresh token.
+  ref: authentication/fullview-authentication.yml
+identity_model:
+  org_scoped: true
+  keys: [organisationId, externalId, email]
+  note: >-
+    API calls and recordings are scoped to an organisationId and reference the
+    end user by externalId (your system's user id) plus email.
+regions:
+  ids: [eu1, eu2, us]
+  note: >-
+    Multi-region deployment; host and app subdomains are region-prefixed
+    (api.eu1.fullview.io, app.eu1.fullview.io, auth.eu1.fullview.io). EU2 is
+    hosted on OVH.
+idempotency:
+  supported: unknown
+  note: No idempotency-key mechanism is documented for the bug-report endpoints.
+pagination:
+  supported: unknown
+client_events:
+  transport: browser DOM CustomEvent via window.addEventListener
+  detail_field: event.detail.callId
+  ref: components/fullview-components.yml
+  events:
+    - fullview:callRequested
+    - fullview:callAccepted
+    - fullview:callDenied
+    - fullview:callEnded
+    - fullview:supportRequested
+    - fullview:supportRequestCancelledByCustomer
+    - fullview:supportRequestCancelledByAgent
+    - fullview:supportRequestTaken
+privacy_controls:
+  - Redacting PII and sensitive user data (field masking)
+  - Disable data capture for specific domains or user properties
+  - Exclude specific users from being recorded
+  - disableReplaysForUser flag on the identity object
+error_envelope:
+  shape: unknown
+  note: Error response schema is not documented in the public developer docs.

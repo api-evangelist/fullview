@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+hosts:
+  - host: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: fullview-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        note: >-
+          Keycloak also serves an RFC 8414 authorization-server metadata
+          document at the realm root; equivalent to the OIDC discovery doc.
+  - host: https://www.fullview.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404

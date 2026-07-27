@@ -1,0 +1,8 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/fullview-bug-report-openapi.yml
+skills:
+  - file: fullview-report-a-bug.md
+    name: Record a Fullview bug report for a user
+    api: openapi/fullview-bug-report-openapi.yml
+    operations: [startBugReport, stopBugReport]

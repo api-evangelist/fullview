@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+probe: false
+url: https://trust.fullview.io/
+certifications:
+  - SOC 2
+  - GDPR
+subprocessors:
+  - name: Amazon Web Services
+    purpose: Cloud infrastructure for data hosting and processing
+documents:
+  - Data Processing Agreements (DPAs) for EU1, EU2/OVH and US instances
+  - Pentest documentation
+  - GDPR Compliance Policy
+  - Security & Compliance Overview
+security_contact: security@fullview.io
+evidence:
+  - source: https://trust.fullview.io/
+    keywords: [soc 2, gdpr, trust center, dpa, pentest, subprocessors]

@@ -1,0 +1,23 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Fullview Bug Report API
+  version: 1.0.0
+extends: openapi/fullview-bug-report-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-19'
+      x-apievangelist-source: https://support.fullview.io/en/articles/11552509-report-a-bug-api-endpoints
+  - target: $.info
+    update:
+      x-product-category: [cobrowsing, session-replay, customer-support]
+  - target: $.paths['/access/api/integrations/bug-report/start'].post
+    update:
+      x-agentic-access:
+        action-class: acting
+        consequence: write
+  - target: $.paths['/access/api/integrations/bug-report/stop'].post
+    update:
+      x-agentic-access:
+        action-class: acting
+        consequence: write

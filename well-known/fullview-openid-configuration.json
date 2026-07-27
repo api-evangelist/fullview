@@ -1,0 +1,41 @@
+{
+  "issuer": "https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1",
+  "authorization_endpoint": "https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/auth",
+  "token_endpoint": "https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/token",
+  "jwks_uri": "https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/certs",
+  "scopes_supported": [
+    "openid",
+    "microprofile-jwt",
+    "basic",
+    "email",
+    "offline_access",
+    "address",
+    "web-origins",
+    "profile",
+    "service_account",
+    "roles",
+    "acr",
+    "phone"
+  ],
+  "grant_types_supported": [
+    "authorization_code",
+    "client_credentials",
+    "implicit",
+    "password",
+    "refresh_token",
+    "urn:ietf:params:oauth:grant-type:device_code",
+    "urn:ietf:params:oauth:grant-type:token-exchange",
+    "urn:ietf:params:oauth:grant-type:uma-ticket",
+    "urn:openid:params:grant-type:ciba"
+  ],
+  "response_types_supported": [
+    "code",
+    "none",
+    "id_token",
+    "token",
+    "id_token token",
+    "code id_token",
+    "code token",
+    "code id_token token"
+  ]
+}

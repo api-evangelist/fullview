@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/fullview-bug-report-openapi.yml
+entities:
+  - name: Organisation
+    id_field: organisationId
+    description: The Fullview customer account/tenant; scopes all users and recordings.
+  - name: User
+    id_field: externalId
+    fields: [externalId, email, name, roles, env]
+    description: >-
+      An identified end user, keyed by your system's externalId and email; set
+      client-side via window.$fvIdentity.
+  - name: BugReport
+    description: A recording session started/stopped via the Bug Report API for a user.
+    fields: [organisationId, externalId, email, integrationData]
+  - name: SessionReplay
+    description: An automatically captured recording of a user's browser session.
+  - name: CobrowseCall
+    id_field: callId
+    description: >-
+      A real-time cobrowse session between an agent and a customer; its
+      lifecycle is surfaced through fullview:call* browser events.
+  - name: IntegrationContext
+    fields: [platform, workspaceId, caseId]
+    description: Help-desk integration metadata attached to a bug report.
+relationships:
+  - from: User
+    to: Organisation
+    type: belongs_to
+    via: organisationId
+  - from: BugReport
+    to: Organisation
+    type: belongs_to
+    via: organisationId
+  - from: BugReport
+    to: User
+    type: belongs_to
+    via: externalId
+  - from: BugReport
+    to: IntegrationContext
+    type: has_one
+    via: integrationData
+  - from: SessionReplay
+    to: User
+    type: belongs_to
+    via: externalId
+  - from: CobrowseCall
+    to: User
+    type: belongs_to
+    via: externalId

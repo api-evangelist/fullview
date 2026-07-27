@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://support.fullview.io/en/collections/3529098-developer-docs
+families:
+  - name: Web SDK (session replay + cobrowse)
+    kind: embedded-browser-widget
+    loader: >-
+      Org-unique <script> pasted into the <head> of your web app (installs the
+      Fullview browser SDK).
+    globals:
+      - name: window.$fvIdentity
+        description: End-user identity object (id, name, email, roles, env, disableReplaysForUser) or a signed JWT string.
+      - name: window.$fvIdentityRefresh
+        description: Function you implement that returns a fresh signed-identity JWT.
+    events:
+      transport: browser DOM CustomEvent (window.addEventListener)
+      list:
+        - fullview:callRequested
+        - fullview:callAccepted
+        - fullview:callDenied
+        - fullview:callEnded
+        - fullview:supportRequested
+        - fullview:supportRequestCancelledByCustomer
+        - fullview:supportRequestCancelledByAgent
+        - fullview:supportRequestTaken
+    docs: https://support.fullview.io/en/articles/6122361-how-to-install-fullview
+  - name: React Native SDK
+    kind: mobile-sdk
+    package: "@fullview/react-native-fullview-sdk"
+    description: Screen-sharing / real-time cobrowse assistance and session capture for React Native apps.
+    docs: https://www.npmjs.com/package/@fullview/react-native-fullview-sdk
+  - name: Help-desk embedded panels
+    kind: hosted-embedded-app
+    surfaces: [Zendesk, Intercom, Salesforce Service Cloud, HubSpot Service Hub]
+    description: >-
+      Fullview cobrowse/replay surfaces embedded directly inside the agent's
+      help-desk ticket view via one-click integrations.
+    docs: https://www.fullview.io/integrations

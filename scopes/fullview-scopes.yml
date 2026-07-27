@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+docs: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+schemes:
+  - name: fullviewOIDC
+    source: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/.well-known/openid-configuration
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/auth
+        tokenUrl: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/token
+      - flow: clientCredentials
+        tokenUrl: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/token
+scopes:
+  - scope: openid
+    description: OpenID Connect authentication; required to receive an ID token.
+  - scope: profile
+    description: Access to the user's basic profile claims.
+  - scope: email
+    description: Access to the user's email claim.
+  - scope: address
+    description: Access to the user's address claim.
+  - scope: phone
+    description: Access to the user's phone claim.
+  - scope: roles
+    description: Include realm/client role mappings in the token.
+  - scope: offline_access
+    description: Issue a refresh token for offline access.
+  - scope: microprofile-jwt
+    description: MicroProfile JWT claims (groups, upn) for service authorization.
+  - scope: service_account
+    description: Scope associated with client-credentials service accounts.
+  - scope: web-origins
+    description: Allowed web origins claim for CORS.
+  - scope: acr
+    description: Authentication Context Class Reference handling.
+  - scope: basic
+    description: Keycloak basic client scope (sub, auth_time claims).

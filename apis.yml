@@ -1,8 +1,30 @@
 aid: fullview
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fullview.png
 name: Fullview
-description: Fullview is a company surfaced as a portfolio company of lightspeed-venture-partners, seedcamp
-  and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the
-  enrichment pipeline.
+description: >-
+  Fullview is a customer-support platform that combines cobrowsing and session
+  replays. Support agents can view and control a customer's browser session in
+  real time directly from a help-desk ticket, and automatically recorded session
+  replays capture user clicks, scrolls, console logs, network errors and
+  JavaScript exceptions so issues can be diagnosed without asking the customer to
+  screen-share. Fullview integrates one-click with Zendesk, Intercom, Salesforce
+  Service Cloud and HubSpot Service Hub, offers customizable privacy controls and
+  PII masking, and exposes a Bug Report integration API plus web and React Native
+  SDKs. Authentication is handled by a Keycloak-based OpenID Connect provider,
+  with optional RS256 JWT "Signed Identities" to secure end-user identity.
+  Backed by Lightspeed Venture Partners and Seedcamp.
 url: https://raw.githubusercontent.com/api-evangelist/fullview/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -13,15 +35,99 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Customer Support
+- Cobrowsing
+- Session Replay
+- Customer Experience
+- Developer Tools
+- Help Desk
+- SaaS
+apis:
+- aid: fullview:fullview-bug-report-api
+  name: Fullview Bug Report API
+  description: The Bug Report API from Fullview — 2 operation(s) for bug report.
+  humanURL: https://support.fullview.io/en/articles/11552509-report-a-bug-api-endpoints
+  baseURL: https://api.eu1.fullview.io
+  tags:
+  - Bug Report
+  properties:
+  - type: OpenAPI
+    url: openapi/fullview-bug-report-api-openapi.yml
+  - type: Authentication
+    url: authentication/fullview-authentication.yml
+  - type: OAuthScopes
+    url: scopes/fullview-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/fullview-domain-security.yml
 - type: Website
-  url: http://fullview.io
+  url: https://www.fullview.io
+- type: Documentation
+  url: https://support.fullview.io/en/collections/3529098-developer-docs
+- type: APIReference
+  url: https://support.fullview.io/en/articles/11552509-report-a-bug-api-endpoints
+- type: GettingStarted
+  url: https://support.fullview.io/en/articles/6122361-how-to-install-fullview
+- type: HelpCenter
+  url: https://support.fullview.io/en/
+- type: Blog
+  url: https://www.fullview.io/blog
+- type: Pricing
+  url: https://www.fullview.io/pricing
+- type: SignUp
+  url: https://auth.eu1.fullview.io/realms/fullview-idp-users-eu1/protocol/openid-connect/registrations
+- type: Login
+  url: https://app.eu1.fullview.io/
+- type: Integrations
+  url: https://www.fullview.io/integrations
+- type: TrustCenter
+  url: https://trust.fullview.io/
+- type: Compliance
+  url: https://trust.fullview.io/
+- type: Authentication
+  url: authentication/fullview-authentication.yml
+- type: OAuthScopes
+  url: scopes/fullview-scopes.yml
+- type: WellKnown
+  url: well-known/fullview-well-known.yml
+- type: Packages
+  url: packages/fullview-packages.yml
+- type: SDKs
+  url: packages/fullview-packages.yml
+- type: MCPServer
+  url: mcp/fullview-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/fullview-llms.txt
+- type: Conventions
+  url: conventions/fullview-conventions.yml
+- type: Components
+  url: components/fullview-components.yml
+- type: Conformance
+  url: conformance/fullview-conformance.yml
+- type: DataModel
+  url: data-model/fullview-data-model.yml
+- type: Lifecycle
+  url: lifecycle/fullview-lifecycle.yml
+- type: Overlay
+  url: overlays/fullview-bug-report-overlay.yaml
+- type: TrustCenter
+  url: security/fullview-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/fullview-vulnerability-disclosure.yml
+- type: Security
+  url: https://trust.fullview.io/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

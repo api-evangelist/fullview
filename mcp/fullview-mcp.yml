@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/fullview-bug-report-openapi.yml
+server:
+  name: fullview
+  transport: http
+  note: >-
+    No official hosted/remote Fullview MCP server was found (docs, npm
+    @modelcontextprotocol, MCP registries). Tools below are a candidate surface
+    derived from the documented Bug Report API operations.
+tools:
+  - name: start_bug_report
+    description: Start a Fullview bug recording (session replay) for an identified end user.
+    source_operation: openapi/fullview-bug-report-openapi.yml#startBugReport
+  - name: stop_bug_report
+    description: Stop an in-progress Fullview bug recording for an identified end user.
+    source_operation: openapi/fullview-bug-report-openapi.yml#stopBugReport

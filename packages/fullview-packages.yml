@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.npmjs.com/org/fullview
+packages:
+  - language: javascript
+    platform: react-native
+    registry: npm
+    name: "@fullview/react-native-fullview-sdk"
+    url: https://www.npmjs.com/package/@fullview/react-native-fullview-sdk
+    install: npm install @fullview/react-native-fullview-sdk
+    official: true
+    description: >-
+      Fullview SDK for React Native — integrate screen-sharing, real-time
+      cobrowsing assistance and session capture into a React Native app.
+  - language: javascript
+    registry: npm
+    name: "@fullview/rrweb-types"
+    url: https://www.npmjs.com/package/@fullview/rrweb-types
+    install: npm install @fullview/rrweb-types
+    official: true
+    description: >-
+      Fullview's published rrweb type definitions (session-replay recording
+      types), part of the @fullview npm organization.
+  - language: javascript
+    platform: web
+    registry: hosted-snippet
+    name: Fullview Web SDK snippet
+    official: true
+    install: >-
+      Paste the org-unique <script> from your Fullview Installation page into
+      the <head> of your web app.
+    docs: https://support.fullview.io/en/articles/6122361-how-to-install-fullview
+    description: >-
+      The browser session-replay + cobrowse SDK, delivered as an org-unique
+      hosted snippet rather than a package; end-user identity is set via the
+      window.$fvIdentity global.

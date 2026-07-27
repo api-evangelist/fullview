@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://trust.fullview.io/
+versioning:
+  scheme: none-declared
+  note: >-
+    The documented Bug Report API paths carry no version segment; deployment is
+    region-partitioned by subdomain (eu1, eu2, us) rather than by API version.
+regions:
+  - id: eu1
+    hosts: [api.eu1.fullview.io, app.eu1.fullview.io, auth.eu1.fullview.io]
+  - id: eu2
+    note: Hosted on OVH.
+  - id: us
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+status_page: null
+sla:
+  note: Custom SLAs available on enterprise plans (per pricing page); no public SLA URL.

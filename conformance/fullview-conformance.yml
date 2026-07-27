@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://trust.fullview.io/
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: Keycloak OIDC provider exposes OAuth 2.0 token/authorization endpoints and grant types.
+  - id: oidc
+    conforms: true
+    evidence: /.well-known/openid-configuration served at realm fullview-idp-users-eu1.
+  - id: soc2
+    conforms: true
+    evidence: SOC 2 named on https://trust.fullview.io/
+  - id: gdpr
+    conforms: true
+    evidence: GDPR compliance program + DPAs named on https://trust.fullview.io/
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No application/problem+json error envelope documented.
+  - id: iso27001
+    conforms: false
+    evidence: Not named on the trust center.
+  - id: hipaa
+    conforms: false
+    evidence: Not named on the trust center.
+  - id: pci-dss
+    conforms: false
+    evidence: Not named on the trust center.

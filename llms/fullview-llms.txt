@@ -1,0 +1,39 @@
+# Fullview
+
+> Fullview is a customer-support platform combining cobrowsing (agents view and control a customer's browser session in real time, directly from a help-desk ticket) and session replays (automatic recording of user sessions with console, network and JavaScript-error capture). Integrates one-click with Zendesk, Intercom, Salesforce and HubSpot.
+
+## APIs
+- [Bug Report API](https://support.fullview.io/en/articles/11552509-report-a-bug-api-endpoints): Start/stop a session-replay bug recording for an identified user (host https://api.eu1.fullview.io).
+
+## Specs
+- [Bug Report OpenAPI](openapi/fullview-bug-report-openapi.yml): startBugReport, stopBugReport.
+- [OpenID configuration](well-known/fullview-openid-configuration.json): Keycloak OIDC discovery (realm fullview-idp-users-eu1).
+
+## Auth
+- [Authentication profile](authentication/fullview-authentication.yml): OpenID Connect (Keycloak) + RS256 JWT Signed Identities.
+- [OAuth scopes](scopes/fullview-scopes.yml): openid, profile, email, roles, offline_access, ...
+- [Signed Identities (JWT)](https://support.fullview.io/en/articles/15082329-signed-identities-secure-your-users-with-jwt-signed-identities)
+
+## SDKs & Install
+- [How to install Fullview](https://support.fullview.io/en/articles/6122361-how-to-install-fullview)
+- [@fullview/react-native-fullview-sdk](https://www.npmjs.com/package/@fullview/react-native-fullview-sdk)
+- [Packages](packages/fullview-packages.yml)
+- [Embedded components](components/fullview-components.yml): Web SDK, React Native SDK, help-desk panels.
+
+## Docs
+- [Developer docs](https://support.fullview.io/en/collections/3529098-developer-docs)
+- [Listening for Fullview events](https://support.fullview.io/en/articles/8266878-listening-for-fullview-events)
+- [Conventions](conventions/fullview-conventions.yml)
+- [Data model](data-model/fullview-data-model.yml)
+
+## Integrations
+- [Integrations](https://www.fullview.io/integrations): Zendesk, Intercom, Salesforce, HubSpot (Freshdesk, Jira coming soon).
+
+## Trust & Security
+- [Trust center](https://trust.fullview.io/): SOC 2, GDPR. Security contact security@fullview.io.
+
+## Company
+- [Website](https://www.fullview.io)
+- [Pricing](https://www.fullview.io/pricing)
+- [Blog](https://www.fullview.io/blog)
+- [Help center](https://support.fullview.io/en/)
