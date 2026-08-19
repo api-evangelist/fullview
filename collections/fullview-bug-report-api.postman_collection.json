@@ -1,0 +1,210 @@
+{
+  "item": [
+    {
+      "id": "a8b7e8c6-605e-48eb-8e60-97bacbd1dda4",
+      "name": "Bug Report",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cfaad0cb-d434-421e-88aa-fc7166b66f93",
+          "name": "Start a bug recording",
+          "request": {
+            "name": "Start a bug recording",
+            "description": {
+              "content": "Starts a Fullview bug recording (session replay) for the identified end user so a support agent can review the reproduction. Optionally carries help-desk integration context (platform, workspace, case).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "api",
+                "integrations",
+                "bug-report",
+                "start"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"integrationData\": {\n    \"platform\": \"<string>\",\n    \"workspaceId\": \"<string>\",\n    \"caseId\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a8e9e0fc-7c0a-44e8-a6e2-79735bb46822",
+              "name": "Bug recording started.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "api",
+                    "integrations",
+                    "bug-report",
+                    "start"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organisationId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"integrationData\": {\n    \"platform\": \"string\",\n    \"workspaceId\": \"string\",\n    \"caseId\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09cef93f-7de0-4752-8e9a-fdb7b214a8b9",
+          "name": "Stop a bug recording",
+          "request": {
+            "name": "Stop a bug recording",
+            "description": {
+              "content": "Stops an in-progress Fullview bug recording for the identified end user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "access",
+                "api",
+                "integrations",
+                "bug-report",
+                "stop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organisationId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "be66bbbd-c48f-4c98-a81b-0b6e5a3ed276",
+              "name": "Bug recording stopped.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "api",
+                    "integrations",
+                    "bug-report",
+                    "stop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organisationId\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eu1.fullview.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9c0cdbf5-ac58-4158-9536-e95b12cb5045",
+    "name": "Fullview Bug Report API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Fullview integration API for programmatically starting and stopping a bug recording (session replay capture) for an identified end user. Documented in the Fullview developer knowledge base (\"Report a bug - API endpoints\"). Used by help-desk / support integrations to attach a Fullview session recording to a support case. Captured verbatim from public Fullview documentation by the API Evangelist enrichment pipeline.\n\nContact Support:\n Name: Fullview Support\n Email: support@fullview.io",
+      "type": "text/plain"
+    }
+  }
+}

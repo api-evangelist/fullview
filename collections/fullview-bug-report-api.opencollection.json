@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fullview Bug Report API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bug Report",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start a bug recording",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.eu1.fullview.io/access/api/integrations/bug-report/start",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts a Fullview bug recording (session replay) for the identified end user so a support agent can review the reproduction. Optionally carries help-desk integration context (platform, workspace, case)."
+        },
+        {
+          "info": {
+            "name": "Stop a bug recording",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.eu1.fullview.io/access/api/integrations/bug-report/stop",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Stops an in-progress Fullview bug recording for the identified end user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
