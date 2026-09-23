@@ -1,7 +1,7 @@
 {
   "provider": "fullview",
   "sources": [
-    "fullview-bug-report-api-openapi.yml"
+    "_original/fullview-bug-report-openapi.yml"
   ],
   "outputs": [
     "fullview-bug-report-api-openapi.yml"
@@ -9,6 +9,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fullview-bug-report-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "fullview-bug-report-openapi.yml: declared missing tag: Bug Report",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fullview-bug-report-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
