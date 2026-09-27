@@ -52,7 +52,7 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
-- Customer-Support
+- Customer Support
 - Co-Browsing
 - Session Replay
 - Customer Experience
@@ -68,6 +68,7 @@ tags_raw:
 - Developer Tools
 - Help Desk
 - SaaS
+- Customer-Support
 apis:
 - aid: fullview:fullview-bug-report-api
   name: Fullview Bug Report API
