@@ -61,23 +61,6 @@ components:
           type: string
         caseId:
           type: string
-    StopBugReportRequest:
-      type: object
-      required:
-      - organisationId
-      - externalId
-      - email
-      properties:
-        organisationId:
-          type: string
-          description: The Fullview organisation identifier.
-        externalId:
-          type: string
-          description: The end user's identifier in your system.
-        email:
-          type: string
-          format: email
-          description: The end user's email address.
     StartBugReportRequest:
       type: object
       required:
@@ -97,6 +80,23 @@ components:
           description: The end user's email address.
         integrationData:
           $ref: '#/components/schemas/IntegrationData'
+    StopBugReportRequest:
+      type: object
+      required:
+      - organisationId
+      - externalId
+      - email
+      properties:
+        organisationId:
+          type: string
+          description: The Fullview organisation identifier.
+        externalId:
+          type: string
+          description: The end user's identifier in your system.
+        email:
+          type: string
+          format: email
+          description: The end user's email address.
   securitySchemes:
     fullviewOIDC:
       type: openIdConnect
