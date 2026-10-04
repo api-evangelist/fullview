@@ -50,6 +50,23 @@ paths:
           description: Bug recording stopped.
 components:
   schemas:
+    StopBugReportRequest:
+      type: object
+      required:
+      - organisationId
+      - externalId
+      - email
+      properties:
+        organisationId:
+          type: string
+          description: The Fullview organisation identifier.
+        externalId:
+          type: string
+          description: The end user's identifier in your system.
+        email:
+          type: string
+          format: email
+          description: The end user's email address.
     IntegrationData:
       type: object
       description: Optional help-desk integration context attached to the recording.
@@ -80,23 +97,6 @@ components:
           description: The end user's email address.
         integrationData:
           $ref: '#/components/schemas/IntegrationData'
-    StopBugReportRequest:
-      type: object
-      required:
-      - organisationId
-      - externalId
-      - email
-      properties:
-        organisationId:
-          type: string
-          description: The Fullview organisation identifier.
-        externalId:
-          type: string
-          description: The end user's identifier in your system.
-        email:
-          type: string
-          format: email
-          description: The end user's email address.
   securitySchemes:
     fullviewOIDC:
       type: openIdConnect
