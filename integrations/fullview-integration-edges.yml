@@ -16,9 +16,27 @@ edges:
   detected: '2026-10-19'
   detected_by: mirror-platform-listings.py
   category: Video
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=fullview
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Fullview
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Inbox tools
 generated: '2026-10-19'
 method: searched
 source:
 - zendesk/integrations/zendesk-integration-edges.yml
 checked:
 - zendesk/integrations/zendesk-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
